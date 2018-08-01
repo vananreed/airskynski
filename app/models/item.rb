@@ -1,4 +1,4 @@
 class Item < ApplicationRecord
   belongs_to :user
-  has_many :reviews, through: :bookings
+  has_many :item_reviews, through: :bookings
 end
