@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :items do
     resources :bookings, only: [:create]
   end
-  get 'items/myitems', to: 'items#myitems', as: 'myitems'
+  get 'dashboard', to: 'users#dashboard', as: 'dashboard'
   resources :bookings, only: [:index, :show, :destroy]
 end
