@@ -1,3 +1,5 @@
+<% content_for :body_class, "bg-#{@item.category.downcase}" %>
+
 <div class="container">
 
   <div class="product-details">
@@ -18,7 +20,7 @@
   </div>
 
   <div class="product-photo">
-    <%= @item.photo %>
+    <%= image_tag(@item.photo, size: "300x350") %>
   </div>
 
   <div class="product-description">
