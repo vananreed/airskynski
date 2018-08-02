@@ -1,13 +1,14 @@
 class ItemReviewsController < ApplicationController
 
   def create
+    @user = current_user
     @item_review = ItemReview.new(item_review_params)
     @item_review.booking = Booking.find(params[:booking_id])
-    if @item_review.valid?
-      @item_review.save
-      redirect_to dashboard_path
+    if @item_review.save
+      redirect_to @item_review.booking.item
     else
-    render 'dashboard'
+      flash[:alert] = "Review invalid"
+      render 'users/dashboard'
     end
   end
 
