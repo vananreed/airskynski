@@ -20,6 +20,6 @@ class ApplicationController < ActionController::Base
   end
 
   def users_controller?
-    controller_name == "users" || controller_name == "item_reviews"
+    controller_name == "users" || controller_name == "item_reviews" || controller_name == "bookings"
   end
 end
