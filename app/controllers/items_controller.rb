@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:home, :index, :show]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+
   def index
     @items = policy_scope(Item)
   end
