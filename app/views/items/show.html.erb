@@ -1,1 +1,21 @@
-show.html.erb
+<div class="container">
+  <h2><%= @item.name %></h2>
+  <div class="item-details">
+    <%= @item.name %>
+    <%= @item.description %>
+    <%= @item.category %>
+    $<%= @item.price %>
+    <%= @item.address %>
+    <% if policy(@item) %>
+      <%= link_to "Edit", edit_item_path(@item) %>
+    <% end %>
+  </div>
+  <div class="container">
+    <div class="reviews">
+      <% @item.item_reviews.each do |review| %>
+        <%= review.content %>
+      <% end %>
+    </div>
+  </div>
+  <%= link_to "Back to Search", items_path %>
+</div>

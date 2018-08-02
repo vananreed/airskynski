@@ -14,6 +14,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = current_user.items.new(item_params)
+    byebug
     authorize @item
     if @item.valid?
       @item.save
