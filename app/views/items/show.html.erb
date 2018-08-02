@@ -6,7 +6,7 @@
     <%= @item.category %>
     $<%= @item.price %>
     <%= @item.address %>
-    <% if policy(@item) %>
+    <% if policy(@item).edit? %>
       <%= link_to "Edit", edit_item_path(@item) %>
     <% end %>
   </div>
