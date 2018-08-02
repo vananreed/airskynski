@@ -9,7 +9,12 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
-  <body>
+  <body class="<%= yield (:body_class) %>">
+    <% if controller_name == 'pages' && action_name == "home" %>
+      <%= render "shared/transparent-navbar" %>
+    <% else %>
+      <%= render "shared/navbar" %>
+    <% end %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>

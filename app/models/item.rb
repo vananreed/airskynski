@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
   belongs_to :user
   has_many :bookings
-  has_many :item_reviews, through: :bookings, source: "item"
+  has_many :item_reviews, through: :bookings
 
   validates :price, presence: true
   validates :name, presence: true
