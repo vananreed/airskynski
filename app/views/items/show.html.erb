@@ -35,7 +35,9 @@
   <div class="container">
     <div class="reviews">
       <% @item.item_reviews.each do |review| %>
+      <div class="review">
         <%= review.content %>
+      </div>
       <% end %>
     </div>
   </div>

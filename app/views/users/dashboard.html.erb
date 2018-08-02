@@ -1,2 +1,21 @@
 <h1>Users#dashboard</h1>
-<p>Find me in app/views/users/dashboard.html.erb</p>
+<p>Hi, <%= @user.first_name %> <%= @user.last_name %>! </p>
+
+<div class="container">
+  <% @user.bookings.each do |booking| %>
+  <div class="booking">
+    <%= booking.item.name %>
+    <%= booking.start_date %>
+    <%= booking.end_date %>
+    <div class="add-review">
+      <%= simple_form_for [booking, @item_review] do |f|%>
+        <%= f.input :rating, collection: [1,2,3,4,5] %>
+        <%= f.input :content %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+
