@@ -1,0 +1,63 @@
+.banner {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.banner-content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+}
+
+.centered-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 127vh;
+  width: 60%;
+  margin: 0 auto;
+}
+.select-home{
+  width: 25%;
+  display: inline-block;
+}
+
+.please-work {
+  width: 50%;
+  display: inline-block;
+}
+
+.search-box{
+  width: 100%;
+}
+
+.mini {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 200px;
+}
+
+.mini-logo {
+  display: flex;
+  height: 50px;
+  flex-direction: column;
+  align-items: baseline;
+  margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
