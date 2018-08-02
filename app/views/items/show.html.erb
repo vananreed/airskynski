@@ -43,3 +43,9 @@
   </div>
   <%= link_to "Back to Search", items_path %>
 </div>
+
+<div class="container">
+  <div class="booking-form">
+  <%= render "shared/booking-form", item:@item, booking:@booking %>
+  </div>
+</div>
