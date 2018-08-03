@@ -5,6 +5,18 @@ class ItemsController < ApplicationController
   def index
     @items = policy_scope(Item).where.not(latitude: nil, longitude: nil)
 
+    if params[:category].present?
+      @items = @items.where(category: params[:category])
+    end
+
+    if params[:itemname].present?
+      @items = @items.where("name ILIKE ?", "%#{params[:itemname]}%")
+    end
+
+    if params[:location].present?
+      @items = @items.where("address ILIKE ?", "%#{params[:location]}%")
+    end
+
     @markers = @items.map do |item|
       {
         lat: item.latitude,

@@ -1,4 +1,13 @@
 <div class="container">
+  <%= form_tag("/items", method: "get") do %>
+    <%= select_tag "category", options_for_select(Item.all.pluck(:category).uniq), include_blank: "All", class: "select-home form-control" %>
+     <%= text_field_tag :itemname, nil, placeholder: "What?", class: "please-work form-control" %>
+    <%= text_field_tag :location, nil, placeholder: "Where?", class: "please-work form-control" %>
+    <%= submit_tag("Search Now", class: "btn btn-primary")  %>
+  <% end %>
+</div>
+
+<div class="container">
   <h2>Search Results</h2>
 </div>
 
