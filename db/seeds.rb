@@ -32,7 +32,7 @@ item = Item.new(user_id: 2, price: 10, name: "Portable BBQ", description: "Porta
 item.save!
 item = Item.new(user_id: 4, price: 4000, name: "Parachute", description: "Slightly used Parachute", category: "Sky", photo: "https://images.pexels.com/photos/67298/parachute-paratrooper-parachutist-land-67298.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", address: "Calle de Caracas, 21, 28010 Madrid, Spain", published: true)
 item.save!
-item = Item.new(user_id: 5, price: 560, name: "ATV", description: "Large All terrain vehicle for cross country mountain use", category: "mountain", photo: "https://images.pexels.com/photos/910623/pexels-photo-910623.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350", address: "133, chemin Grondin, 07 469 Gay", published: true)
+item = Item.new(user_id: 5, price: 560, name: "ATV", description: "Large All terrain vehicle for cross country mountain use", category: "Mountain", photo: "https://images.pexels.com/photos/910623/pexels-photo-910623.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350", address: "133, chemin Grondin, 07 469 Gay", published: true)
 item.save!
 item = Item.new(user_id: 2, price: 200, name: "Kite surf", description: "Kite surfing for 2", category: "Sky", photo: "https://images.pexels.com/photos/205518/pexels-photo-205518.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350", address: "place de Lejeune, 16 808 Bigot" , published: true)
 item.save!
