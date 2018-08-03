@@ -9,10 +9,12 @@
     <%= booking.start_date %>
     <%= booking.end_date %>
     <div class="add-review">
-      <%= simple_form_for [booking, @item_review] do |f|%>
-        <%= f.input :rating, collection: [1,2,3,4,5] %>
-        <%= f.input :content %>
-        <%= f.submit %>
+      <% if !booking.item_review %>
+        <%= simple_form_for [booking, @item_review] do |f|%>
+          <%= f.input :rating, collection: [1,2,3,4,5] %>
+          <%= f.input :content %>
+          <%= f.submit %>
+        <% end %>
       <% end %>
     </div>
   </div>
