@@ -16,29 +16,29 @@ user4 = User.create!(first_name: "Lance", last_name: "Purnell", email: "Lancekrp
 user5 = User.create!(first_name: "James", last_name: "Douglas", email: "JDouglas@jizzmail.com", password: "password5")
 user6 = User.create!(first_name: "Dirk", last_name: "wagon", email: "dirk@lewagon.com", password: "password6")
 
-item = Item.new(user_id: 2, price: 100, name: "Snowboard", description: "Good for snowboarding in the Alpes", category: "Snow", photo: "https://cdn.pixabay.com/photo/2013/12/12/21/28/snowboards-227543__480.jpg", address: "10 Erlin Ter, Tewksbury, Massachusetts(MA), 01876", published: true)
+item = Item.new(user_id: 2, price: 100, name: "Snowboard", description: "Good for snowboarding in the Alpes", category: "Snow", photo: "https://images.pexels.com/photos/376697/pexels-photo-376697.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350", address: "10 Erlin Ter, Tewksbury, Massachusetts(MA), 01876", published: true)
 item.save!
-item = Item.new(user_id: 3, price: 120, name: "Surf Board", description: "will feel like Moses when surfing the sea", category: "Water", photo: "https://cdn.pixabay.com/photo/2015/09/29/10/56/surf-963696__480.jpg", address: "1825 E 13th Ave, Winfield, Kansas(KS), 67156", published: true)
+item = Item.new(user_id: 3, price: 120, name: "Surf Board", description: "will feel like Moses when surfing the sea", category: "Water", photo: "https://images.pexels.com/photos/757133/pexels-photo-757133.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350", address: "1825 E 13th Ave, Winfield, Kansas(KS), 67156", published: true)
 item.save!
-item = Item.new(user_id: 2, price: 30, name: "Badminton set", description: "Complete set without net", category: "Outdoor", photo: "https://cdn.pixabay.com/photo/2016/05/31/23/21/badminton-1428046__480.jpg", address: "29 George St, Medford, Massachusetts(MA), 02155", published: true)
+item = Item.new(user_id: 2, price: 30, name: "Badminton with shuttlecocks", description: "Complete set without net", category: "Outdoor", photo: "https://images.pexels.com/photos/115016/badminton-shuttle-sport-bat-115016.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350", address: "29 George St, Medford, Massachusetts(MA), 02155", published: true)
 item.save!
-item = Item.new(user_id: 2, price: 45, name: "Tennis Rackets", description: "2 rackets", category: "Outdoor", photo: "https://cdn.pixabay.com/photo/2018/07/22/08/47/tennis-3554013__480.jpg", address: "14 Makinson Avenue, Wigan, WN2 2SE", published: true)
+item = Item.new(user_id: 2, price: 45, name: "Tennis Racket", description: "Tennis ball and racket", category: "Outdoor", photo: "https://images.pexels.com/photos/209977/pexels-photo-209977.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350", address: "14 Makinson Avenue, Wigan, WN2 2SE", published: true)
 item.save!
-item = Item.new(user_id: 3, price: 99, name: "Tent", description: "Large Tent for a family outing in the woods", category: "Outdoor", photo: "https://cdn.pixabay.com/photo/2016/02/19/10/06/tent-1209076__480.jpg", address: "10 Old Hall Meadow, Bury St. Edmunds, IP30 0QZ", published: true)
+item = Item.new(user_id: 3, price: 99, name: "Tent", description: "Large Tent for a family outing in the woods", category: "Outdoor", photo: "https://images.pexels.com/photos/756780/pexels-photo-756780.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350", address: "10 Old Hall Meadow, Bury St. Edmunds, IP30 0QZ", published: true)
 item.save!
-item = Item.new(user_id: 4, price: 50, name: "Skis", description: "a pair of skiis", category: "Snow", photo: "https://cdn.pixabay.com/photo/2015/09/09/17/57/ski-932188__480.jpg", address: "Jln. Bayam No. 495, Tegal 65269, Bali", published: true)
+item = Item.new(user_id: 4, price: 50, name: "Skis", description: "A pair of skis", category: "Snow", photo: "https://images.pexels.com/photos/257961/pexels-photo-257961.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", address: "Jln. Bayam No. 495, Tegal 65269, Bali", published: true)
 item.save!
-item = Item.new(user_id: 2, price: 10, name: "Portable BBQ", description: "Portable BBG for outdoor hiking use", category: "Mountain", photo: "https://cdn.pixabay.com/photo/2018/07/20/08/17/charcoal-3550207__480.jpg", address: "32353 N Forest Dr, Grayslake, Illinois(IL), 60030", published: true)
+item = Item.new(user_id: 2, price: 10, name: "Portable BBQ", description: "Portable BBG for outdoor hiking use", category: "Mountain", photo: "https://images.pexels.com/photos/1171585/pexels-photo-1171585.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350", address: "32353 N Forest Dr, Grayslake, Illinois(IL), 60030", published: true)
 item.save!
-item = Item.new(user_id: 4, price: 4000, name: "Parachutes", description: "Parachutes for a party of 3", category: "Sky", photo: "https://cdn.pixabay.com/photo/2013/02/09/01/22/skydive-79548__480.jpg", address: "Calle de Caracas, 21, 28010 Madrid, Spain", published: true)
+item = Item.new(user_id: 4, price: 4000, name: "Parachute", description: "Slightly used Parachute", category: "Sky", photo: "https://images.pexels.com/photos/67298/parachute-paratrooper-parachutist-land-67298.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", address: "Calle de Caracas, 21, 28010 Madrid, Spain", published: true)
 item.save!
-item = Item.new(user_id: 5, price: 560, name: "ATV", description: "Large All terrain vehicle for cross country mountain use", category: "mountain", photo: "https://cdn.pixabay.com/photo/2017/06/09/09/54/atv-2386374__480.jpg", address: "133, chemin Grondin, 07 469 Gay", published: true)
+item = Item.new(user_id: 5, price: 560, name: "ATV", description: "Large All terrain vehicle for cross country mountain use", category: "mountain", photo: "https://images.pexels.com/photos/910623/pexels-photo-910623.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350", address: "133, chemin Grondin, 07 469 Gay", published: true)
 item.save!
-item = Item.new(user_id: 2, price: 200, name: "Kite surf", description: "Kite surfing for 2", category: "Sky", photo: "https://cdn.pixabay.com/photo/2016/10/28/15/19/kite-surfing-1778289__480.jpg", address: "place de Lejeune, 16 808 Bigot" , published: true)
+item = Item.new(user_id: 2, price: 200, name: "Kite surf", description: "Kite surfing for 2", category: "Sky", photo: "https://images.pexels.com/photos/205518/pexels-photo-205518.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350", address: "place de Lejeune, 16 808 Bigot" , published: true)
 item.save!
-item = Item.new(user_id: 5, price: 10000, name: "JetSki", description: "Ride like Jesus with this awesome JetSki", category: "Water", photo: "https://cdn.pixabay.com/photo/2016/01/07/05/00/jet-ski-1125329__480.jpg", address: "Psr. Sugiono No. 341, Kupang 78560, PapBar", published: true)
+item = Item.new(user_id: 5, price: 10000, name: "JetSki", description: "Ride like Jesus with this awesome JetSki", category: "Water", photo: "https://images.pexels.com/photos/33046/jet-ski-water-sport-water-bike-water.jpg?auto=compress&cs=tinysrgb&dpr=2&h=350", address: "Psr. Sugiono No. 341, Kupang 78560, PapBar", published: true)
 item.save!
-item = Item.new(user_id: 4, price: 3, name: "Kite", description: "Cheap and wonderful for your pleasure", category: "Wind", photo: "https://cdn.pixabay.com/photo/2016/01/24/19/55/kite-1159538__480.jpg", address: "Ds. Abdullah No. 247, Yogyakarta 27227, NTB", published: true)
+item = Item.new(user_id: 4, price: 3, name: "Kite", description: "Cheap and wonderful for your pleasure", category: "Wind", photo: "https://images.pexels.com/photos/929362/pexels-photo-929362.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350", address: "Ds. Abdullah No. 247, Yogyakarta 27227, NTB", published: true)
 item.save!
 
 booking = Booking.new(user_id: 1, item_id: 3, start_date: " Fri, 08 Dec 2017 00:00:00 UTC +00:00", end_date: "Sun, 10 Dec 2017 00:00:00 UTC +00:00", price: 30)
