@@ -5,31 +5,18 @@
       <p class="paragraph">The selected best local partners</p>
       <div class="search-box">
         <%= form_tag("/search", method: "get") do %>
-        <%= select_tag "Equipment Type", options_for_select(["Select Category", "Snowboards", "Helmets", "Life-Jacket"], "Select Category"), class: "select-home form-control" %>
-        <%= text_field_tag :q, nil, placeholder: "Where would you like to book?", class: "please-work form-control" %>
-        <%= submit_tag("Search Now", class: "btn btn-primary")  %>
+          <%= select_tag "Equipment Type", options_for_select(["Select Category", "Snowboards", "Helmets", "Life-Jacket"], "Select Category"), class: "select-home form-control" %>
+          <%= text_field_tag :q, nil, placeholder: "Where would you like to book?", class: "please-work form-control" %>
+          <%= submit_tag("Search Now", class: "btn btn-primary")  %>
         <% end %>
-     </div>
+      </div>
     </div>
     <div class="mini">
-<div><%= image_tag("feather.svg", class: "mini-logo") %>Travel Light
-</div>
-  <div>
-    <%= image_tag("piggy.svg", class: "mini-logo") %>Save Time & Money
-  </div>
-  <div>
-    <%= image_tag("balance.svg", class: "mini-logo") %>Compare Offers
-  </div>
-  <div>
-    <%= image_tag("help.svg", class: "mini-logo") %>
-    <p>
-      Help 24/7
-    </p>
-  </div>
-
-
-  </div>
-</div>
+      <div><%= image_tag("feather.svg", class: "mini-logo") %>Travel Light</div>
+      <div><%= image_tag("piggy.svg", class: "mini-logo") %>Save Time & Money</div>
+      <div><%= image_tag("balance.svg", class: "mini-logo") %>Compare Offers</div>
+      <div><%= image_tag("help.svg", class: "mini-logo") %>Help 24/7</div>
+    </div>
   </div>
 </div>
 
