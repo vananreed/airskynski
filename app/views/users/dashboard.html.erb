@@ -4,20 +4,22 @@
 <div class="container">
   <h2>Your Bookings</h2>
   <% @user.bookings.each do |booking| %>
-  <div class="booking">
-    <%= booking.item.name %>
-    <%= booking.start_date %>
-    <%= booking.end_date %>
-    <div class="add-review">
-      <% if !booking.item_review %>
-        <%= simple_form_for [booking, @item_review] do |f|%>
-          <%= f.input :rating, collection: [1,2,3,4,5] %>
-          <%= f.input :content %>
-          <%= f.submit %>
+    <div class="booking">
+      <div class="booking-details">
+        <div><%= booking.item.name %></div>
+        <div>Start date: <%= booking.start_date.strftime("%FT%T") %></div>
+        <div>End date: <%= booking.end_date.strftime("%FT%T") %></div>
+      </div>
+      <div class="add-review">
+        <% if !booking.item_review %>
+          <%= simple_form_for [booking, @item_review] do |f|%>
+            <%= f.input :rating, collection: [1,2,3,4,5] %>
+            <%= f.input :content %>
+            <%= f.submit %>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
-  </div>
   <% end %>
 </div>
 
