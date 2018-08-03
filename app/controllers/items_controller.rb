@@ -3,7 +3,15 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @items = policy_scope(Item)
+    @items = policy_scope(Item).where.not(latitude: nil, longitude: nil)
+
+    @markers = @items.map do |item|
+      {
+        lat: item.latitude,
+        lng: item.longitude,
+        infoWindow: { content: render_to_string(partial: "/items/map_box", locals: { item: item }) }
+      }
+    end
   end
 
   def show
