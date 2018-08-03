@@ -3,6 +3,9 @@ class Item < ApplicationRecord
   has_many :bookings
   has_many :item_reviews, through: :bookings
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   validates :price, presence: true
   validates :name, presence: true
   validates :description, presence: true
