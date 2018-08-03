@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: url('http://skitheclubbies.nz/assets/Uploads/Salomon-Boot-Banner.jpg');">
+<div class="banner">
   <div class="banner-content">
     <div class="centered-form">
       <h1 class="heading"><b>Rent</b> sports equipment</h1>
@@ -9,41 +9,128 @@
         <%= text_field_tag :q, nil, placeholder: "Where would you like to book?", class: "please-work form-control" %>
         <%= submit_tag("Search Now", class: "btn btn-primary")  %>
         <% end %>
-     </div>
+      </div>
     </div>
     <div class="mini">
-<div><%= image_tag("feather.svg", class: "mini-logo") %>Travel Light
+      <div>
+        <%= image_tag("feather.svg", class: "mini-logo") %>Travel Light
+      </div>
+      <div>
+        <%= image_tag("piggy.svg", class: "mini-logo") %>Save Time & Money
+      </div>
+      <div>
+        <%= image_tag("balance.svg", class: "mini-logo") %>Compare Offers
+      </div>
+      <div>
+        <%= image_tag("help.svg", class: "mini-logo") %>
+        <p>
+          Help 24/7
+        </p>
+      </div>
+    </div>
+    <div class="carousel-container">
+      <div id="carousel-example-generic" class="carousel slide height-100"  data-ride="carousel" data-interval="5000">
+        <div class="carousel-inner height-100" role="listbox">
+          <div class="item carousel-item active height-100">
+            <div class="carousel-gradient"></div>
+            <img src="http://skitheclubbies.nz/assets/Uploads/Salomon-Boot-Banner.jpg" alt="..." class="height-100">
+          </div>
+          <div class="item height-100">
+            <div class="carousel-gradient"></div>
+            <img src="https://images.unsplash.com/photo-1505343011179-ffb744ab9bef?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c038482c22e9eccc547a9b8b30d03d6b&auto=format&fit=crop&w=1349&q=80" alt="..." class="height-100">
+          </div>
+          <div class="item height-100">
+            <div class="carousel-gradient"></div>
+            <img src="https://images.unsplash.com/photo-1525508629910-42c1c009a34e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e395bd0ec5f9cbe0a5e43ba07c174c8e&auto=format&fit=crop&w=1267&q=80" alt="..." class="height-100">
+          </div>
+          <div class="item height-100">
+            <div class="carousel-gradient"></div>
+            <img src="https://images.unsplash.com/photo-1520967973927-e5c9957b0280?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c38ecad8ad7c05f272afe0e62388b222&auto=format&fit=crop&w=1441&q=80" alt="..." class="height-100">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-  <div>
-    <%= image_tag("piggy.svg", class: "mini-logo") %>Save Time & Money
-  </div>
-  <div>
-    <%= image_tag("balance.svg", class: "mini-logo") %>Compare Offers
-  </div>
-  <div>
-    <%= image_tag("help.svg", class: "mini-logo") %>
-    <p>
-      Help 24/7
-    </p>
-  </div>
 
-
+<h2 class="text-center">Bike Equipment</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <img class="card-user" src="https://images.unsplash.com/photo-1511994298241-608e28f14fde?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=735dff7662fcaf93e202d7a1aa76c313&auto=format&fit=crop&w=1500&q=80">
+      <a class="card-link" href="#" >The Reed Ride 5.0</a>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <img class="card-user" src="https://images.unsplash.com/photo-1501586765721-cbda49ee21b7?ixlib=rb-0.3.5&s=6047be77c6a75de4dad6041f8516e9a1&auto=format&fit=crop&w=1500&q=80">
+      <a class="card-link" href="#" >The Lance Crash Helmet 2018</a>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <img class="card-user" src="https://images.unsplash.com/photo-1505158498176-0150297fbd7d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4f98fbf1b49c38e25e85896a285e9eab&auto=format&fit=crop&w=800&q=60">
+      <a class="card-link" href="#" >Hitman Hugo 5000x</a>
+    </div>
   </div>
 </div>
+
+<h2 class="text-center">Water Sports Equipment</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <img class="card-user" src="http://www.coolestmaterial.com/wp-content/uploads/2011/12/Coolest-and-Sleek-Surfboards-by-Chanel.jpg">
+      <a class="card-link" href="#" >The Magnus Wave 2017</a>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <img class="card-user" src="http://merafritid.se/content/images/thumbs/0004588_kawasaki-jetski-stx15f.jpeg">
+      <a class="card-link" href="#">Julian Jetski A5x</a>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <img class="card-user" src="http://union.ic.ac.uk/rcc/wakeboarding/wp-content/uploads/2011/09/wakeboard-board_picture-e1317298058452.jpg">
+      <a class="card-link" href="#" >Djamal Wakeboard SCX</a>
+    </div>
   </div>
 </div>
 
+<h2 class="text-center">Winter Sports Equipment</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <img class="card-user" src="https://www.nmsportsystems.com/merchant/4570/images/site/ArborSnowboard-Banner-01.jpg">
+      <a class="card-link" href="#" ><b>The Lindelwe Board</b></a>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <img class="card-user" src="https://cdn.mec.ca/medias/sys_master/high-res/high-res/8905349038110/5055301-NOC02.jpg">
+      <a class="card-link" href="#" >The Professional's XX3000</a>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <img class="card-user" src="https://ae01.alicdn.com/kf/HTB1CXQurbsTMeJjy1zcq6xAgXXa9/WOASWE-Motorcycles-skiing-Jacket-Protective-Gear-Protector-Back-Support-Body-Armor-Ski-Snowboarding-Jackets.jpg">
+      <a class="card-link" href="#" >The Tanguy Armour</a>
+    </div>
+  </div>
+</div>
 
-
-
-
-
-
-
-
-
-
-
+<div class="footerwrap">
+  <div class="footer">
+    <div class="image-container">
+      <%= image_tag("loupe.svg", class: "mini-logo-footer") %>
+      <h3 class="h31">Search</h3>
+      <p class="footerparagraph1">Search for the best sports equipment: anywhere, anytime.</p>
+    </div>
+    <div class="image-container">
+      <%= image_tag("notebook.svg", class: "mini-logo-footer") %>
+      <h3>Book</h3>
+      <p class="footerparagraph">Compare price and models then book with a few clicks.</p>
+    </div>
+    <div class="image-container">
+      <%= image_tag("delivery.svg", class: "mini-logo-footer") %>
+      <h3>Receive</h3>
+      <p class="footerparagraph">Pick up your item without the wait for your local partner</p>
+    </div>
+    <div class="image-container">
+      <%= image_tag("high-five.svg", class: "mini-logo-footer") %>
+      <h3>Enjoy</h3>
+      <p class="footerparagraph4">Meet new people, explore the world and have fun.</p>
+    </div>
+  </div>
+</div>
 
 
 
