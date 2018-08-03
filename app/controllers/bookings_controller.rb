@@ -7,6 +7,7 @@ class BookingsController < ApplicationController
   end
 
   def create
+    prevent_owner
     @booking = Booking.new(booking_params)
     @booking.price = @item.price
     @booking.item = @item
@@ -25,6 +26,10 @@ class BookingsController < ApplicationController
   end
 
   private
+
+  def prevent_owner
+    redirect_to @item if current_user == @item.user
+  end
 
   def set_booking
     @booking = Booking.find(params[:id])
