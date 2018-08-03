@@ -45,7 +45,17 @@
   color: #616668;
   font-size: 14px;
 }
+
 .navbar-wagon-link:hover {
+  color: #da552f;
+  text-decoration: none;
+}
+
+.navbar-wagon-link-white {
+  color: #FFF
+}
+
+.navbar-wagon-link-white:hover {
   color: #da552f;
   text-decoration: none;
 }
