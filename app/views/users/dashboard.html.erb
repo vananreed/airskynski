@@ -2,6 +2,7 @@
 <p>Hi, <%= @user.first_name %> <%= @user.last_name %>! </p>
 
 <div class="container">
+  <h2>Your Bookings</h2>
   <% @user.bookings.each do |booking| %>
   <div class="booking">
     <%= booking.item.name %>
@@ -15,6 +16,22 @@
       <% end %>
     </div>
   </div>
+  <% end %>
+</div>
+
+<div class="container">
+  <h2>Your Listed Items</h2>
+  <% @user.items.each do |item|%>
+    <div class="users-item">
+      <%= item.name %>
+      <% if item.published? %>
+        <p>This item is published</p>
+      <% else %>
+        <p>This item is not published</p>
+      <% end %>
+      <%= link_to "View Item", item_path(item) %>
+      <%= link_to "Edit", edit_item_path(item) %>
+    </div>
   <% end %>
 </div>
 
