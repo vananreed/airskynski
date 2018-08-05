@@ -20,7 +20,7 @@
   </div>
 
   <div class="product-photo">
-    <%= image_tag(@item.photo, size: "350x350") %>
+    <%= cl_image_tag @item.photo, height: 350, width: 350 %>
   </div>
 
   <div class="product-description">
