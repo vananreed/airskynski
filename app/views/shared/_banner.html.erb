@@ -1,41 +1,44 @@
-<div class="banner" style="background-image: url('http://skitheclubbies.nz/assets/Uploads/Salomon-Boot-Banner.jpg');">
-  <div class="banner-content">
-    <div class="centered-form">
-      <h1 class="heading"><b>Rent</b> sports equipment</h1>
-      <p class="paragraph">The selected best local partners</p>
+<div class="banner-wrapper">
+  <div class="banner-home">
+    <div class="banner-content">
+      <div class="banner-c2a">
+        <h1 class="heading"><b>Rent</b> sports equipment</h1>
+        <p class="paragraph">The selected best local partners</p>
+      </div>
       <div class="search-box">
-        <%= form_tag("/search", method: "get") do %>
-          <%= select_tag "Equipment Type", options_for_select(["Select Category", "Snowboards", "Helmets", "Life-Jacket"], "Select Category"), class: "select-home form-control" %>
-          <%= text_field_tag :q, nil, placeholder: "Where would you like to book?", class: "please-work form-control" %>
-          <%= submit_tag("Search Now", class: "btn btn-primary")  %>
+        <%= form_tag("/items", class: "form-inline", method: "get") do %>
+          <%= select_tag "category", options_for_select(Item.all.pluck(:category).uniq), include_blank: "All", class: "form-control" %>
+           <%= text_field_tag :itemname, nil, placeholder: "What would you like to rent?", class: "form-control keyword" %>
+          <%= text_field_tag :location, nil, placeholder: "Where would you like to rent?", class: "form-control input" %>
+          <%= submit_tag("Search Now", id: "searchbtn", class: "btn btn-primary")  %>
         <% end %>
       </div>
     </div>
-    <div class="mini">
-      <div><%= image_tag("feather.svg", class: "mini-logo") %>Travel Light</div>
-      <div><%= image_tag("piggy.svg", class: "mini-logo") %>Save Time & Money</div>
-      <div><%= image_tag("balance.svg", class: "mini-logo") %>Compare Offers</div>
-      <div><%= image_tag("help.svg", class: "mini-logo") %>Help 24/7</div>
+    <div class="advantages">
+      <div><%= image_tag("feather.svg", class: "advantages-img") %>Travel Light</div>
+      <div><%= image_tag("piggy.svg", class: "advantages-img") %>Save Time & Money</div>
+      <div><%= image_tag("balance.svg", class: "advantages-img") %>Compare Offers</div>
+      <div><%= image_tag("help.svg", class: "advantages-img") %>Help 24/7</div>
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div id="homecarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="3500">
+  <div class="carousel-inner">
+    <div class="active item">
+      <div class="carousel-gradient"></div>
+      <%= image_tag "snowboard.jpg" %>
+    </div>
+    <div class="item">
+      <div class="carousel-gradient"></div>
+      <%= image_tag "tenis.jpg" %>
+    </div>
+    <div class="item">
+      <div class="carousel-gradient"></div>
+      <%= image_tag "bike.jpg" %>
+    </div>
+    <div class="item">
+      <div class="carousel-gradient"></div>
+      <%= image_tag "skate.jpg" %>
+    </div>
+  </div>
+</div>
