@@ -3,7 +3,7 @@ function initUpdateNavbarOnScroll() {
   const navbarItem = document.querySelectorAll('.navbar-wagon-link-white');
   if (navbar) {
     window.addEventListener('scroll', () => {
-      if (window.scrollY >= window.innerHeight) {
+      if (window.scrollY >= window.innerHeight - 70) {
         navbar.classList.add('navbar-wagon-white');
         navbarItem.forEach(function(item) {
           item.classList.remove('navbar-wagon-link-white');
