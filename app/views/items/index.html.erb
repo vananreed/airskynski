@@ -1,34 +1,51 @@
-<div class="container">
-  <%= form_tag("/items", method: "get") do %>
-    <%= select_tag "category", options_for_select(Item.all.pluck(:category).uniq), include_blank: "All", class: "select-home form-control" %>
-     <%= text_field_tag :itemname, nil, placeholder: "What?", class: "please-work form-control" %>
-    <%= text_field_tag :location, nil, placeholder: "Where?", class: "please-work form-control" %>
-    <%= submit_tag("Search Now", class: "btn btn-primary")  %>
-  <% end %>
-</div>
-
-<div class="container">
-  <h2>Search Results</h2>
-</div>
+<!-- <div class="container">
+  <div class="search-box">
+    <%#= form_tag("/items", class: "form-inline", method: "get") do %>
+      <%#= select_tag "category", options_for_select(Item.all.pluck(:category).uniq), include_blank: "All", class: "form-control" %>
+       <%#= text_field_tag :itemname, nil, placeholder: "What would you like to rent?", class: "form-control keyword" %>
+      <%#= text_field_tag :location, nil, placeholder: "Where would you like to rent?", class: "form-control input" %>
+      <%#= submit_tag("Search Now", id: "searchbtn", class: "btn btn-primary")  %>
+    <%# end %>
+  </div>
+</div> -->
 
 <div class="container">
   <div class="row">
-    <% @items.each do |item| %>
-      <% if item.published %>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        <%= item.name %>
-        <%= item.description %>
-        <p>Send <%= item.user.first_name %> a message </p>
-        <%= link_to "See Details", item_path(item) %>
-        </div>
-      <% end %>
+    <%= form_tag("/items", class: "form", method: "get") do %>
+      <div class="col-xs-10 col-xs-offset-1 col-md-2 col-md-offset-0 colpadd">
+        <%= select_tag "category", options_for_select(Item.all.pluck(:category).uniq), include_blank: "All", class: "form-control" %>
+      </div>
+      <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 colpadd">
+         <%= text_field_tag :itemname, nil, placeholder: "What would you like to rent?", class: "form-control keyword" %>
+       </div>
+       <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 colpadd">
+        <%= text_field_tag :location, nil, placeholder: "Where would you like to rent?", class: "form-control input" %>
+      </div>
+      <div class="col-xs-10 col-xs-offset-1 col-md-2 col-md-offset-0 colpadd">
+        <%= submit_tag("Search Now", id: "searchbtn", class: "btn btn-primary")  %>
+      </div>
     <% end %>
   </div>
 </div>
 
-<div class="container">
-  <%= link_to "List eQuipment", new_item_path %>
+<!-- <div class="index-content"> -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-7">
+      <div class="row">
+        <% @items.each do |item| %>
+          <% if item.published %>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <p>Im ready</p>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div id="map" data-markers="<%= @markers.to_json %>"></div>
+    </div>
+  </div>
 </div>
 
-<div id="map" data-markers="<%= @markers.to_json %>"></div>
-
+            <%#=  render 'shared/cards', item: item %>
