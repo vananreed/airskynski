@@ -1,60 +1,75 @@
-<div class="product-banner bg-<%=@item.category.downcase%>">
-  <h1><%= @item.name %></h1>
-</div>
-
-<div class="container">
-  <div class="product-details">
-
+<div class="container-fluid">
+  <div class="row">
+    <div class="product-banner bg-<%=@item.category.downcase%>">
+      <h1><%= @item.name %></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 product-detail">
       <div class="location-product">
         <%= @item.address %>
       </div>
-
-    <div class="product-rate">
-      <strong>
-        Daily Rate:<span>$ <%= @item.price %></span>
-      </strong>
-    </div>
-
-    <div class="product-photo">
-      <%= cl_image_tag @item.photo, height: 350, width: 350 %>
-    </div>
-
-    <div class="product-description">
-      <h4>Description:</h4>
-      <p><%= @item.description %></p>
-    </div>
-
-    <div class="edit-option">
-      <% if policy(@item).edit? %>
-        <%= link_to "Edit", edit_item_path(@item) %>
-      <% end %>
-    </div>
-
-    <div class="container reviews-container">
-      <h3>Reviews:</h3>
-      <div class="reviews">
-        <% @item.item_reviews.each do |review| %>
-        <div class="review">
-          <% review.rating.times do %>
-            <i class="fas fa-star"></i>
-          <% end %>
-          <% (5 -(review.rating)).times do %>
-            <i class="far fa-star"></i>
-          <% end %>
-          <br>
-          <%= review.content %>
-        </div>
+      <div class="product-rate">
+        <strong>
+          Daily Rate:<span>$ <%= @item.price %></span>
+        </strong>
+      </div>
+      <div class="product-photo">
+        <%= cl_image_tag @item.photo, height: 350, width: 350 %>
+      </div>
+      <div class="product-description">
+        <h4>Description:</h4>
+        <p><%= @item.description %></p>
+      </div>
+      <div class="edit-option">
+        <% if policy(@item).edit? %>
+          <%= link_to "Edit", edit_item_path(@item) %>
         <% end %>
       </div>
+      <div class="reviews-container">
+        <h3>Reviews:</h3>
+        <div class="reviews">
+          <% @item.item_reviews.each do |review| %>
+          <div class="review">
+            <% review.rating.times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+            <% (5 -(review.rating)).times do %>
+              <i class="far fa-star"></i>
+            <% end %>
+            <br>
+            <%= review.content %>
+          </div>
+          <% end %>
+        </div>
+      </div>
     </div>
-  <%= link_to "Back to Search", items_path %>
-  </div>
-
-  <div class="container">
-    <div class="booking-form">
-      <% if @item.user != current_user %>
-        <%= render "shared/booking-form", item:@item, booking:@booking %>
-      <% end %>
+    <div class="col-md-4 booking-form">
+      <div class="booking-card">
+        <h2>Your booking</h2>
+        <div class="bookingform">
+          <% if @item.user != current_user %>
+            <%= render "shared/booking-form", item:@item, booking:@booking %>
+          <% end %>
+        </div>
+        <hr>
+        <div class="price">
+          <p>Total: <%= @item.price %> €</p>
+        </div>
+        <hr>
+        <ul class="guarantees">
+          <li>Inmediate response</li>
+          <li>Close to you</li>
+          <li>Guaranteed assistance</li>
+        </ul>
+        <hr>
+        <div class="secure-payment">
+          <p>Secure Payment</p>
+          <p>VISA - MASTERCARD - APPLE PAY - AMEXPRESS</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+<%= link_to "Back to Search", items_path %>
