@@ -36,7 +36,7 @@
         <% @items.each do |item| %>
           <% if item.published %>
             <div class="col-xs-12 col-sm-6 col-md-4">
-              <p>Im ready</p>
+              <%= render 'shared/card', item: item %>
             </div>
           <% end %>
         <% end %>
