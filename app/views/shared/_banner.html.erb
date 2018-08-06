@@ -5,13 +5,23 @@
         <h1 class="heading"><b>Rent</b> sports equipment</h1>
         <p class="paragraph">The selected best local partners</p>
       </div>
-      <div class="search-box">
-        <%= form_tag("/items", class: "form-inline", method: "get") do %>
-          <%= select_tag "category", options_for_select(Item.all.pluck(:category).uniq), include_blank: "All", class: "form-control" %>
-           <%= text_field_tag :itemname, nil, placeholder: "What would you like to rent?", class: "form-control keyword" %>
-          <%= text_field_tag :location, nil, placeholder: "Where would you like to rent?", class: "form-control input" %>
-          <%= submit_tag("Search Now", id: "searchbtn", class: "btn btn-primary")  %>
-        <% end %>
+      <div class="searchbar-container">
+        <div class="row">
+          <%= form_tag("/items", class: "form", method: "get") do %>
+            <div class="col-xs-10 col-xs-offset-1 col-md-2 col-md-offset-0 colpadd">
+              <%= select_tag "category", options_for_select(Item.all.pluck(:category).uniq), include_blank: "All", class: "form-control" %>
+            </div>
+            <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 colpadd">
+               <%= text_field_tag :itemname, nil, placeholder: "What would you like to rent?", class: "form-control keyword" %>
+             </div>
+             <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 colpadd">
+              <%= text_field_tag :location, nil, placeholder: "Where would you like to rent?", class: "form-control input" %>
+            </div>
+            <div class="col-xs-10 col-xs-offset-1 col-md-2 col-md-offset-0 colpadd">
+              <%= submit_tag("Search Now", id: "searchbtn", class: "btn btn-primary")  %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
     <div class="advantages">

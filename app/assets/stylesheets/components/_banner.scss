@@ -35,8 +35,8 @@
   }
 }
 
-.search-box {
-  width: 100%;
+.searchbar-container {
+  width: 97%;
 }
 
 .form-control {
@@ -45,17 +45,10 @@
   font-size: 15px;
 }
 
-#itemname {
-  width: 40%;
-}
-
-#location {
-  width: 35%;
-}
-
 #searchbtn {
   height: 50px;
   border-radius: 5px;
+  width: 100%;
 }
 
 .advantages {
