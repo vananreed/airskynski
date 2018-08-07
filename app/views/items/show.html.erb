@@ -28,9 +28,9 @@
       </div>
       <div class="reviews-container">
         <h3>Reviews</h3>
+        <% @item.item_reviews.each do |review| %>
         <div class="reviews">
           <%= image_tag "http://kitt.lewagon.com/placeholder/users/dirkschuler", class: "avatar" %>
-          <% @item.item_reviews.each do |review| %>
             <div class="review-name">
               <%= review.booking.user.first_name %>
             </div>
@@ -45,8 +45,8 @@
                 <i class="far fa-star"></i>
               <% end %>
             </div>
-          <% end %>
         </div>
+        <% end %>
       </div>
       <div class="linkto-search">
         <%= link_to "Back to Search", items_path %>
