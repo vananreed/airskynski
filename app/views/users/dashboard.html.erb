@@ -53,9 +53,9 @@
           <% end %>
           <div>
             <% if item.published? %>
-            <p>This item is published</p>
+            <p class="published">This item is published</p>
             <% else %>
-            <p>This item is not published</p>
+            <p class="published">This item is not published</p>
             <% end %>
             <%= link_to "Edit", edit_item_path(item), class: "button button-red" %>
           </div>
