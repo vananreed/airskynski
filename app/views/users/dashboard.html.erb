@@ -21,7 +21,7 @@
           <%= simple_form_for [booking, @item_review] do |f|%>
           <%= f.input :rating, collection: [1,2,3,4,5] %>
           <%= f.input :content %>
-          <%= f.submit %>
+          <%= f.submit "Add Review", class: "btn btn-primary" %>
           <% end %>
           <% end %>
         </div>
@@ -37,22 +37,29 @@
     <div class="user-items">
       <div>
         <h2>Your Listed Items</h2>
+        <% if @user.items.presence %>
         <% @user.items.each do |item|%>
-        <%= link_to item_path(item) do %>
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-          <%= render 'shared/card', item: item %>
-          <div>
-            <%= link_to "Edit", edit_item_path(item), class: "btn btn-danger" %>
-            <% if item.published? %>
-            <p>This item is published</p>
-            <% else %>
-            <p>This item is not published</p>
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+            <%= link_to item_path(item) do %>
+              <%= render 'shared/card', item: item %>
             <% end %>
+            <div>
+              <% if item.published? %>
+              <p>This item is published</p>
+              <% else %>
+              <p>This item is not published</p>
+              <% end %>
+              <%= link_to "Edit", edit_item_path(item), class: "btn btn-danger" %>
+            </div>
           </div>
+        <% end %>
+        <% else %>
+        <div class="no-items">
+          You haven't listed any items yet!
         </div>
+        <%= link_to "List an Item now", new_item_path %>
         <% end %>
       </div>
-      <% end %>
     </div>
   </div>
 </div>
