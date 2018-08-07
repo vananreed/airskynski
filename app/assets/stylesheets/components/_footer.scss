@@ -1,6 +1,6 @@
 footer {
-  background: linear-gradient(to right, #6190e8, #a7bfe8);
-  height: 44vh;
+  background-color: #1FBF8F;
+  height: 275px;
   margin-top: 50px;
   padding-top: 4vh;
 }
@@ -8,13 +8,23 @@ footer {
 .footer-icons {
   display: flex;
   display-flex: row;
-  justify-content: space-between;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+  height: 40px;
+}
+
+.width-15 {
+  width: 15%;
 }
 
 .fab {
-  font-size: 28px;
+  font-size: 25px;
   margin-top: 12px;
+  color: white;
+  transition: all 200ms ease;
+}
+
+.fab:hover {
+  font-size: 30px;
 }
 
 .footer-logo-text {
@@ -29,18 +39,30 @@ footer {
 
 .footer-list {
   color: white;
+  font-size: 16px;
+  width: 130px;
+  margin-left: 100px;
   a {
     color: white;
+    font-size: 12px;
+    opacity: 0.7;
   }
+}
+
+h5 {
+  font-size: 12px;
+  padding-left: 15px;
+  margin-bottom: 0px;
 }
 
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    line-height: 29px;
+    line-height: 20px;
 }
 
 .footer-header {
   padding-top: 2.5vh;
+  margin-bottom: 10px;
 }
