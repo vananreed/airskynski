@@ -1,11 +1,11 @@
 .card {
-  margin-bottom: 50px;
-  border-radius: 3px;
-  border: 1px solid #b9b9b9;
+  border-radius: 5px;
+  border: 1px solid rgb(235, 235, 235);
 }
 
 .card:hover {
-  box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  box-shadow: 0px 6px 20px 0px rgba(0,0,0,0.3);
+  transition: box-shadow 0.2s ease-in;
 }
 
 .card h4 {
@@ -18,7 +18,7 @@
 .card-content {
   height: 30vh;
   background-size: cover !important;
-  border-radius: 3px;
+  border-radius: 5px;
   background-position: center;
   position: relative;
   opacity: 1;
@@ -26,6 +26,7 @@
 
 .card-content:hover {
   opacity: 0.8;
+  transition: opacity 0.2s ease-in;
 }
 
 .card-footer {

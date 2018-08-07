@@ -21,9 +21,11 @@
         <% @items.each do |item| %>
           <% if item.published %>
           <%= link_to item_path(item) do %>
-            <div class="col-xs-12 col-sm-6 col-md-4">
-              <%= render 'shared/card', item: item %>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="row-margin">
+                <%= render 'shared/card', item: item %>
             </div>
+          </div>
             <% end %>
           <% end %>
         <% end %>
