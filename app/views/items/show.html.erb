@@ -30,7 +30,8 @@
         <h3>Reviews</h3>
         <% @item.item_reviews.each do |review| %>
         <div class="reviews">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/dirkschuler", class: "avatar" %>
+          <%= image_tag "http://kitt.lewagon.com/placeholder/users/zentuco", class: "avatar" %>
+          <% @item.item_reviews.each do |review| %>
             <div class="review-name">
               <%= review.booking.user.first_name %>
             </div>
