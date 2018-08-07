@@ -1,47 +1,55 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="product-banner bg-<%=@item.category.downcase%>">
-      <h1><%= @item.name %></h1>
-    </div>
-  </div>
+<div class="product-banner bg-<%=@item.category.downcase%>"></div>
+<div class="container-fluid padded">
   <div class="row">
     <div class="col-md-8 product-detail">
-      <div class="location-product">
-        <%= @item.address %>
-      </div>
-      <div class="product-rate">
-        <strong>
-          Daily Rate:<span>$ <%= @item.price %></span>
-        </strong>
+      <div class="product-name">
+        <h1><%= @item.name %></h1>
+        <p><%= @item.address %></p>
+        <p><strong>Daily Rate: <%= @item.price %> €</strong></p>
       </div>
       <div class="product-photo">
-        <%= cl_image_tag @item.photo, height: 350, width: 350 %>
+        <%= cl_image_tag @item.photo %>
       </div>
-      <div class="product-description">
-        <h4>Description:</h4>
-        <p><%= @item.description %></p>
+      <div class="container product-description">
+        <div class="row">
+          <div class="col-md-8">
+            <h3>Description</h3>
+            <p><%= @item.description %></p>
+          </div>
+          <div class="col-md-4">
+            <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=14&size=200x200&sensor=false&maptype=roadmap&markers=color:red|#{URI::encode(@item.address)}" %>
+          </div>
+        </div>
       </div>
       <div class="edit-option">
         <% if policy(@item).edit? %>
-          <%= link_to "Edit", edit_item_path(@item) %>
+        <%= link_to "Edit", edit_item_path(@item) %>
         <% end %>
       </div>
       <div class="reviews-container">
-        <h3>Reviews:</h3>
+        <h3>Reviews</h3>
         <div class="reviews">
+          <%= image_tag "http://kitt.lewagon.com/placeholder/users/dirkschuler", class: "avatar" %>
           <% @item.item_reviews.each do |review| %>
-          <div class="review">
-            <% review.rating.times do %>
-              <i class="fas fa-star"></i>
-            <% end %>
-            <% (5 -(review.rating)).times do %>
-              <i class="far fa-star"></i>
-            <% end %>
-            <br>
-            <%= review.content %>
-          </div>
+            <div class="review-name">
+              <%= review.booking.user.first_name %>
+            </div>
+            <div class="review-body">
+                <%= review.content %>
+            </div>
+            <div class="review-rating">
+              <% review.rating.times do %>
+                <i class="fas fa-star"></i>
+              <% end %>
+              <% (5 -(review.rating)).times do %>
+                <i class="far fa-star"></i>
+              <% end %>
+            </div>
           <% end %>
         </div>
+      </div>
+      <div class="linkto-search">
+        <%= link_to "Back to Search", items_path %>
       </div>
     </div>
     <div class="col-md-4 booking-form">
@@ -49,27 +57,26 @@
         <h2>Your booking</h2>
         <div class="bookingform">
           <% if @item.user != current_user %>
-            <%= render "shared/booking-form", item:@item, booking:@booking %>
+          <%= render "shared/booking-form", item:@item, booking:@booking %>
           <% end %>
         </div>
         <hr>
-        <div class="booking-price">
-          Total: <%= @item.price %>€
-        </div>
-        <hr>
         <ul class="guarantees">
-          <li>Inmediate response</li>
-          <li>Close to you</li>
-          <li>Guaranteed assistance</li>
+          <li><i class="far fa-check-square"></i></i> Inmediate response</li>
+          <li><i class="far fa-check-square"></i></i> Close to you</li>
+          <li><i class="far fa-check-square"></i></i> Guaranteed assistance</li>
         </ul>
         <hr>
         <div class="secure-payment">
           <p>Secure Payment</p>
-          <p>VISA - MASTERCARD - APPLE PAY - AMEXPRESS</p>
+          <div class="payments">
+            <i class="fab fa-cc-amex"></i>
+            <i class="fab fa-cc-stripe"></i>
+            <i class="fab fa-cc-apple-pay"></i>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<%= link_to "Back to Search", items_path %>

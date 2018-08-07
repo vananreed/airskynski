@@ -1,27 +1,90 @@
 .bg-snow {
- background: url('https://res.cloudinary.com/lancekrp/image/upload/v1533542430/snow_banner1.jpg') no-repeat center center;
+ background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.15)), url('https://res.cloudinary.com/lancekrp/image/upload/v1533542430/snow_banner1.jpg') no-repeat center center;
  background-size: cover;
- padding:60px;
 }
 
 .bg-water {
- background: url('https://res.cloudinary.com/lancekrp/image/upload/v1533542404/water_banner1.jpg') no-repeat center center;
+ background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.15)), url('https://res.cloudinary.com/lancekrp/image/upload/v1533542404/water_banner1.jpg') no-repeat center center;
  background-size: cover;
- padding:60px;
 }
 
 .bg-wind {
- background: url('https://res.cloudinary.com/lancekrp/image/upload/v1533551120/wind_banner5.jpg') no-repeat center center;
+ background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.15)), url('https://res.cloudinary.com/lancekrp/image/upload/v1533542482/wind_banner.jpg') no-repeat center center;
  background-size: cover;
- padding:60px;
 }
 
 .bg-outdoor {
- background: url('https://res.cloudinary.com/lancekrp/image/upload/v1533542465/outdoor_banner1.png') no-repeat center center;
+ background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.15)), url('https://res.cloudinary.com/lancekrp/image/upload/v1533542465/outdoor_banner1.png') no-repeat center center;
  background-size: cover;
- padding:60px;
 }
 
 .product-banner {
-  color: white;
+  height: 35vh;
+  box-shadow: 0px 5px 9px 0px rgba(0,0,0,0.11);
+  margin-bottom: 9px;
+}
+
+.padded {
+  padding: 20px 50px;
+}
+
+.product-name {
+  width: 100%;
+  background-color: #FFF;
+  padding: 20px 30px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(119, 119, 119, 0.5);
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    font-weight: bolder;
+  }
+}
+
+.product-photo {
+  width: 100%;
+
+  img {
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0px 2px 5px rgba(119, 119, 119, 0.5);
+  }
+}
+
+.product-description {
+  width: 100%;
+  background-color: #FFF;
+  padding: 20px 30px;
+  margin: 30px 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(119, 119, 119, 0.5);
+
+  img {
+    border-radius: 100%;
+    border: 1px solid #2f2f2f73;
+    margin: 40px 30px;
+  }
+
+  p {
+    font-size: 15px;
+    text-align: justify;
+    opacity: 0.8;
+  }
+}
+
+.linkto-search {
+  width: 100%;
+  background-color: #FFF;
+  padding: 20px 30px;
+  margin-top: 30px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(119, 119, 119, 0.5);
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    color: #022a3a;
+  }
 }
