@@ -1,6 +1,11 @@
-#map {
-  flex: 0 0 40vw;
+.map-container {
+  flex: 0 0 auto;
   height: 100vh;
   position: sticky !important;
   top: 0 !important;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
 }
