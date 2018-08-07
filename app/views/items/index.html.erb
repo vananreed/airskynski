@@ -1,14 +1,3 @@
-<!-- <div class="container">
-  <div class="search-box">
-    <%#= form_tag("/items", class: "form-inline", method: "get") do %>
-      <%#= select_tag "category", options_for_select(Item.all.pluck(:category).uniq), include_blank: "All", class: "form-control" %>
-       <%#= text_field_tag :itemname, nil, placeholder: "What would you like to rent?", class: "form-control keyword" %>
-      <%#= text_field_tag :location, nil, placeholder: "Where would you like to rent?", class: "form-control input" %>
-      <%#= submit_tag("Search Now", id: "searchbtn", class: "btn btn-primary")  %>
-    <%# end %>
-  </div>
-</div> -->
-
 <div class="container">
   <div class="row">
     <%= form_tag("/items", class: "form", method: "get") do %>
@@ -28,7 +17,6 @@
   </div>
 </div>
 
-<!-- <div class="index-content"> -->
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-7">
@@ -47,5 +35,3 @@
     </div>
   </div>
 </div>
-
-            <%#=  render 'shared/cards', item: item %>
