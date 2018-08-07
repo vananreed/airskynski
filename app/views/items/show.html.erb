@@ -17,7 +17,7 @@
             <p><%= @item.description %></p>
           </div>
           <div class="col-md-4">
-            <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=14&size=200x200&sensor=false&maptype=roadmap&markers=color:red|#{@item.address}" %>
+            <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=14&size=200x200&sensor=false&maptype=roadmap&markers=color:red|#{URI::encode(@item.address)}" %>
           </div>
         </div>
       </div>
@@ -35,9 +35,7 @@
               <%= review.booking.user.first_name %>
             </div>
             <div class="review-body">
-              <p>
                 <%= review.content %>
-              </p>
             </div>
             <div class="review-rating">
               <% review.rating.times do %>

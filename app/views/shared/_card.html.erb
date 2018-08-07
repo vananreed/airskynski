@@ -1,24 +1,21 @@
 <div class="card">
-  <div class="card-content" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path item.photo %>);">
-
+  <div class="card-content" style="background-image: url(<%= cl_image_path item.photo %>);">
   </div>
   <div class="card-footer">
-    <div class="card-description">
-      <div class="category">- <%= item.category %> -</div>
-      <h4><%= item.name %></h4>
-      <!-- <div class="description"><%= item.description %></div> -->
-      <div class="price">From $<strong><%= item.price %></strong>/day</div>
-      <div class="rating">
-        <% rating = item.item_reviews.last.rating if item.item_reviews.last %>
-        <% if rating %>
-          <% rating.times do %>
-          <i class="fas fa-star"></i>
-          <% end %>
-          <% (5 -(rating)).times do %>
-          <i class="far fa-star"></i>
-          <% end %>
+    <div class="category">- <%= item.category %> -</div>
+    <div class="card-name"><h4><%= item.name %></h4></div>
+    <div class="card-price"><strong><%= item.price %>€</strong>/day</div>
+    <div class="card-rating">
+      <% rating = item.item_reviews.last.rating if item.item_reviews.last %>
+      <% if rating %>
+        <% rating.times do %>
+        <i class="fas fa-star"></i>
         <% end %>
-      </div>
+        <% (5 -(rating)).times do %>
+        <i class="far fa-star"></i>
+        <% end %>
+      <% end %>
+      <span> · <%= item.user.first_name %></span>
     </div>
   </div>
 </div>

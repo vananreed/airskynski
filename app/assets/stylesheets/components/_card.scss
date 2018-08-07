@@ -1,5 +1,7 @@
 .card {
-  margin-bottom: 20px;
+  margin-bottom: 50px;
+  border-radius: 3px;
+  border: 1px solid #b9b9b9;
 }
 
 .card:hover {
@@ -14,24 +16,51 @@
 
 
 .card-content {
-  height: 225px;
-
+  height: 30vh;
   background-size: cover !important;
+  border-radius: 3px;
   background-position: center;
   position: relative;
+  opacity: 1;
 }
 
-.card-description {
-  position: relative;
-}
-
-.price {
+.card-content:hover {
+  opacity: 0.8;
 }
 
 .card-footer {
   margin: 5px;
-  height: 105px;
+  height: 130px;
   color: black;
   font-size: 15px;
+  position: relative;
+  margin-bottom: 10px;
+}
 
+.card-category {
+  position: absolute;
+  top: 15px;
+  left: 5px;
+}
+
+.card-name {
+  position: absolute;
+  bottom: 60px;
+  left: 5px;
+}
+
+.card-price {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  font-size: 13px;
+}
+
+.card-rating {
+  position: absolute;
+  bottom: 30px;
+
+  span {
+    font-size: 13px;
+  }
 }

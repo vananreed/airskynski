@@ -1,7 +1,7 @@
 .booking-form {
   flex: 0 0 auto;
   position: sticky !important;
-  top: 0 !important;
+  top: 27px !important;
 }
 
 .booking-card {
@@ -52,6 +52,7 @@
 
   p {
     font-size: 25px;
+    opacity: 0.8;
   }
 
   .payments{
