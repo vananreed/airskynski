@@ -1,23 +1,20 @@
-<div class="container">
-  <div class="row">
-    <%= form_tag("/items", class: "form", method: "get") do %>
-      <div class="col-xs-10 col-xs-offset-1 col-md-2 col-md-offset-0 colpadd">
-        <%= select_tag "category", options_for_select(Item.all.pluck(:category).uniq), include_blank: "All", class: "form-control" %>
-      </div>
-      <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 colpadd">
-         <%= text_field_tag :itemname, nil, placeholder: "What would you like to rent?", class: "form-control keyword" %>
-       </div>
-       <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 colpadd">
-        <%= text_field_tag :location, nil, placeholder: "Where would you like to rent?", class: "form-control input" %>
-      </div>
-      <div class="col-xs-10 col-xs-offset-1 col-md-2 col-md-offset-0 colpadd">
-        <%= submit_tag("Search Now", id: "searchbtn", class: "button")  %>
-      </div>
-    <% end %>
-  </div>
+<div class="searchbar-box">
+  <%= form_tag("/items", class: "form", method: "get") do %>
+    <div class="col-xs-10 col-xs-offset-1 col-md-2 col-md-offset-0 colpadd">
+      <%= select_tag "category", options_for_select(Item.all.pluck(:category).uniq), include_blank: "All", class: "form-control" %>
+    </div>
+    <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 colpadd">
+       <%= text_field_tag :itemname, nil, placeholder: "What would you like to rent?", class: "form-control keyword" %>
+     </div>
+     <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 colpadd">
+      <%= text_field_tag :location, nil, placeholder: "Where would you like to rent?", class: "form-control input" %>
+    </div>
+    <div class="col-xs-10 col-xs-offset-1 col-md-2 col-md-offset-0 colpadd">
+      <%= submit_tag("Search Now", id: "searchbtn", class: "button")  %>
+    </div>
+  <% end %>
 </div>
-
-<div class="container-fluid">
+<div class="container-fluid marged">
   <div class="row">
     <div class="col-md-7">
       <div class="row">

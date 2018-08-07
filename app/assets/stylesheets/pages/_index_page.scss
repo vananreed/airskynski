@@ -9,3 +9,20 @@
 .colpadd {
   padding: 1px;
 }
+
+.searchbar-box {
+  height: 25vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  form {
+    padding: 0px 100px;
+    flex-grow: 1;
+  }
+}
+
+.marged {
+  margin-bottom: 30px;
+}
