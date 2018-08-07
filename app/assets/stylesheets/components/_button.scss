@@ -1,9 +1,10 @@
 .button {
   font-size: 1.5rem;
-  border-radius: 0;
+  border-radius: 0 !important;
+  border: none;
   text-decoration: none;
   font-weight: bold;
-  transition: 0.4s all ease-in-out;
+  transition: 0.3s all ease-in-out;
   padding: 0.6rem;
   text-transform: none;
   margin: 0 0.75rem 0 .5rem;
