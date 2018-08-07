@@ -7,26 +7,34 @@
       </div>
     </div>
     <div class="bookings">
-      <h2>Your Bookings</h2>
+      <h2 class="margin-left">Your Bookings</h2>
       <% if @user.bookings.presence %>
-      <% @user.bookings.each do |booking| %>
-      <div class="booking">
-        <div class="booking-details">
-          <div><%= booking.item.name %></div>
-          <div>Start date: <%= booking.start_date.strftime("%FT%T") %></div>
-          <div>End date: <%= booking.end_date.strftime("%FT%T") %></div>
+      <div class="row">
+        <% @user.bookings.each do |booking| %>
+        <div class="booking">
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <%= link_to item_path(booking.item) do %>
+            <%= render 'shared/card', item: booking.item %>
+            <% end %>
+            <div class="booking-details text-center">
+              <div>Booking ID: <%= booking.id %></div>
+              <div>Start date: <%= booking.start_date.strftime("%m/%d/%Y") %></div>
+              <div class="end-date">End date: <%= booking.end_date.strftime("%m/%d/%Y") %></div>
+              <%= link_to "Cancel this Booking", booking_path(booking), class: "button button-red", :method => :delete, data: {:confirm => "You sure?" } %>
+            </div>
+            <div class="add-review">
+              <% if !booking.item_review %>
+              <%= simple_form_for [booking, @item_review] do |f|%>
+              <%= f.input :rating, collection: [1,2,3,4,5] %>
+              <%= f.input :content %>
+              <%= f.submit "Add Review", class: "button" %>
+              <% end %>
+              <% end %>
+            </div>
+          </div>
         </div>
-        <div class="add-review">
-          <% if !booking.item_review %>
-          <%= simple_form_for [booking, @item_review] do |f|%>
-          <%= f.input :rating, collection: [1,2,3,4,5] %>
-          <%= f.input :content %>
-          <%= f.submit "Add Review", class: "button" %>
-          <% end %>
-          <% end %>
-        </div>
+        <% end %>
       </div>
-      <% end %>
       <% else %>
       <div class="booking">
         You don't have any bookings yet!
@@ -35,23 +43,23 @@
       <% end %>
     </div>
     <div class="user-items">
-      <div>
-        <h2>Your Listed Items</h2>
+      <div class="row">
+        <h2 class="margin-left">Your Listed Items</h2>
         <% if @user.items.presence %>
         <% @user.items.each do |item|%>
-          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-            <%= link_to item_path(item) do %>
-              <%= render 'shared/card', item: item %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <%= link_to item_path(item) do %>
+          <%= render 'shared/card', item: item %>
+          <% end %>
+          <div>
+            <% if item.published? %>
+            <p>This item is published</p>
+            <% else %>
+            <p>This item is not published</p>
             <% end %>
-            <div>
-              <% if item.published? %>
-              <p>This item is published</p>
-              <% else %>
-              <p>This item is not published</p>
-              <% end %>
-              <%= link_to "Edit", edit_item_path(item), class: "button button-red" %>
-            </div>
+            <%= link_to "Edit", edit_item_path(item), class: "button button-red" %>
           </div>
+        </div>
         <% end %>
         <% else %>
         <div class="no-items">
@@ -62,6 +70,5 @@
       </div>
     </div>
   </div>
-</div>
 </div>
 
