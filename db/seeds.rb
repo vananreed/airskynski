@@ -51,25 +51,25 @@ item.save!
 item = Item.new(user_id: 5, price: 31, name: "Djamal Bobsleigh SXCX", description: "Go Bobsleighing with your friends; The Djamal Bobsleigh SXCX's are designed to be as light as possible to allow dynamic positioning of mass through the turns of the course. It combines light metals, steel runners, and an aerodynamic composite body made from fibreglass or carbon fibre, or a mixture of both ", category: "Snow", remote_photo_url: "https://parentesis.com/imagesPosts/bobsleigh%20nissan%203.jpg", address: "Jl. Arcana, Pura Segara, Tejakula, Bali, 81173, Indonesia", latitude: --8.1177969, longitude: 115.3433581, published: true)
 item.save!
 
-booking = Booking.new(user_id: 1, item_id: 3, start_date: " Fri, 08 Dec 2017 00:00:00 UTC +00:00", end_date: "Sun, 10 Dec 2017 00:00:00 UTC +00:00", price: 30)
+booking = Booking.new(user: User.all.sample, item_id: 3, start_date: " Fri, 08 Dec 2017 00:00:00 UTC +00:00", end_date: "Sun, 10 Dec 2017 00:00:00 UTC +00:00", price: 30)
 booking.save!
-booking = Booking.new(user_id: 1, item_id: 1, start_date: " Tue, 12 Dec 2017 00:00:00 UTC +00:00", end_date: "Wed, 13 Dec 2017 00:00:00 UTC +00:00", price: 100)
+booking = Booking.new(user: User.all.sample, item_id: 1, start_date: " Tue, 12 Dec 2017 00:00:00 UTC +00:00", end_date: "Wed, 13 Dec 2017 00:00:00 UTC +00:00", price: 100)
 booking.save!
-booking = Booking.new(user_id: 1, item_id: 6, start_date: " Sat, 30 Dec 2017 00:00:00 UTC +00:00", end_date: "Fri, 05 Jan 2018 00:00:00 UTC +00:00", price: 50)
+booking = Booking.new(user: User.all.sample, item_id: 6, start_date: " Sat, 30 Dec 2017 00:00:00 UTC +00:00", end_date: "Fri, 05 Jan 2018 00:00:00 UTC +00:00", price: 50)
 booking.save!
-booking = Booking.new(user_id: 1, item_id: 7, start_date: " Thu, 08 Mar 2018 00:00:00 UTC +00:00", end_date: "Thu, 15 Mar 2018 00:00:00 UTC +00:00", price: 10)
+booking = Booking.new(user: User.all.sample, item_id: 7, start_date: " Thu, 08 Mar 2018 00:00:00 UTC +00:00", end_date: "Thu, 15 Mar 2018 00:00:00 UTC +00:00", price: 10)
 booking.save!
-booking = Booking.new(user_id: 1, item_id: 10, start_date: " Mon, 09 Apr 2018 00:00:00 UTC +00:00", end_date: "Tue, 10 Apr 2018 00:00:00 UTC +00:00", price: 200)
+booking = Booking.new(user: User.all.sample, item_id: 10, start_date: " Mon, 09 Apr 2018 00:00:00 UTC +00:00", end_date: "Tue, 10 Apr 2018 00:00:00 UTC +00:00", price: 200)
 booking.save!
-booking = Booking.new(user_id: 6, item_id: 11, start_date: " Tue, 24 Apr 2018 00:00:00 UTC +00:00", end_date: "Fri, 27 Apr 2018 00:00:00 UTC +00:00", price: 10000)
+booking = Booking.new(user: User.all.sample, item_id: 11, start_date: " Tue, 24 Apr 2018 00:00:00 UTC +00:00", end_date: "Fri, 27 Apr 2018 00:00:00 UTC +00:00", price: 10000)
 booking.save!
-booking = Booking.new(user_id: 6, item_id: 4, start_date: " Sun, 17 Jun 2018 00:00:00 UTC +00:00", end_date: "Wed, 20 Jun 2018 00:00:00 UTC +00:00", price: 45)
+booking = Booking.new(user: User.all.sample, item_id: 4, start_date: " Sun, 17 Jun 2018 00:00:00 UTC +00:00", end_date: "Wed, 20 Jun 2018 00:00:00 UTC +00:00", price: 45)
 booking.save!
-booking = Booking.new(user_id: 6, item_id: 5, start_date: " Fri, 20 Jul 2018 00:00:00 UTC +00:00", end_date: "Sat, 28 Jul 2018 00:00:00 UTC +00:00", price: 99)
+booking = Booking.new(user: User.all.sample, item_id: 5, start_date: " Fri, 20 Jul 2018 00:00:00 UTC +00:00", end_date: "Sat, 28 Jul 2018 00:00:00 UTC +00:00", price: 99)
 booking.save!
-booking = Booking.new(user_id: 6, item_id: 9, start_date: " Wed, 01 Aug 2018 00:00:00 UTC +00:00", end_date: "Thu, 02 Aug 2018 00:00:00 UTC +00:00", price: 560)
+booking = Booking.new(user: User.all.sample, item_id: 9, start_date: " Wed, 01 Aug 2018 00:00:00 UTC +00:00", end_date: "Thu, 02 Aug 2018 00:00:00 UTC +00:00", price: 560)
 booking.save!
-booking = Booking.new(user_id: 6, item_id: 3, start_date: " Fri, 17 Aug 2018 00:00:00 UTC +00:00", end_date: "Fri, 24 Aug 2018 00:00:00 UTC +00:00", price: 30)
+booking = Booking.new(user: User.all.sample, item_id: 3, start_date: " Fri, 17 Aug 2018 00:00:00 UTC +00:00", end_date: "Fri, 24 Aug 2018 00:00:00 UTC +00:00", price: 30)
 booking.save!
 
 itemreview = ItemReview.new(booking_id: 1, rating: 4, content: "Was good")
