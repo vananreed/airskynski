@@ -29,6 +29,7 @@
       <div class="reviews-container">
         <h3>Reviews</h3>
         <div class="reviews">
+          <% if @item.item_reviews.presence %>
           <%= image_tag "http://kitt.lewagon.com/placeholder/users/zentuco", class: "avatar" %>
           <% @item.item_reviews.each do |review| %>
             <div class="review-name">
@@ -45,20 +46,23 @@
                 <i class="far fa-star"></i>
               <% end %>
             </div>
+          <% end %>
+          <% else %>
+          No Reviews yet!
+          <% end %>
         </div>
-        <% end %>
       </div>
       <div class="linkto-search">
         <%= link_to "Back to Search", items_path %>
       </div>
     </div>
-    <div class="col-md-4 booking-form">
+    <div class="col-md-4">
+        <div class="booking-form">
+    <% if @item.user != current_user %>
       <div class="booking-card">
         <h2>Your booking</h2>
         <div class="bookingform">
-          <% if @item.user != current_user %>
           <%= render "shared/booking-form", item:@item, booking:@booking %>
-          <% end %>
         </div>
         <hr>
         <ul class="guarantees">
@@ -75,6 +79,13 @@
             <i class="fab fa-cc-apple-pay"></i>
           </div>
         </div>
+      </div>
+    <% else %>
+      <h3>This is your Listing!</h3>
+      <% if policy(@item).edit? %>
+        <%= link_to "Edit", edit_item_path(@item) %>
+      <% end %>
+    <% end %>
       </div>
     </div>
   </div>
