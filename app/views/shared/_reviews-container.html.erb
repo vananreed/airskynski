@@ -1,0 +1,24 @@
+<h3>Reviews</h3>
+<div class="reviews">
+  <% if @item.item_reviews.presence %>
+  <%= image_tag "http://kitt.lewagon.com/placeholder/users/zentuco", class: "avatar" %>
+  <% @item.item_reviews.each do |review| %>
+  <div class="review-name">
+    <%= review.booking.user.first_name %>
+  </div>
+  <div class="review-body">
+    <%= review.content %>
+  </div>
+  <div class="review-rating">
+    <% review.rating.times do %>
+    <i class="fas fa-star"></i>
+    <% end %>
+    <% (5 -(review.rating)).times do %>
+    <i class="far fa-star"></i>
+    <% end %>
+  </div>
+  <% end %>
+  <% else %>
+  No Reviews yet!
+  <% end %>
+</div>

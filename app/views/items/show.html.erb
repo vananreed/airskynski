@@ -21,43 +21,14 @@
           </div>
         </div>
       </div>
-      <div class="edit-option">
-        <% if policy(@item).edit? %>
-        <%= link_to "Edit", edit_item_path(@item) %>
-        <% end %>
-      </div>
       <div class="reviews-container">
-        <h3>Reviews</h3>
-        <div class="reviews">
-          <% if @item.item_reviews.presence %>
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/zentuco", class: "avatar" %>
-          <% @item.item_reviews.each do |review| %>
-            <div class="review-name">
-              <%= review.booking.user.first_name %>
-            </div>
-            <div class="review-body">
-                <%= review.content %>
-            </div>
-            <div class="review-rating">
-              <% review.rating.times do %>
-                <i class="fas fa-star"></i>
-              <% end %>
-              <% (5 -(review.rating)).times do %>
-                <i class="far fa-star"></i>
-              <% end %>
-            </div>
-          <% end %>
-          <% else %>
-          No Reviews yet!
-          <% end %>
-        </div>
+        <%= render 'shared/reviews-container' %>
       </div>
       <div class="linkto-search">
         <%= link_to "Back to Search", items_path %>
       </div>
     </div>
-    <div class="col-md-4">
-        <div class="booking-form">
+    <div class="col-md-4 booking-form">
     <% if @item.user != current_user %>
       <div class="booking-card">
         <h2>Your booking</h2>
@@ -86,7 +57,6 @@
         <%= link_to "Edit", edit_item_path(@item) %>
       <% end %>
     <% end %>
-      </div>
     </div>
   </div>
 </div>
